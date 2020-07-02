@@ -68,7 +68,7 @@ Page({
   },
   goToWxLogin: function(e) {
     var temp
-    if(this.registerSign){
+    if(this.data.registerSign){
       temp = '/pages/home/home'
     } else {
       temp = '/pages/register/register'
