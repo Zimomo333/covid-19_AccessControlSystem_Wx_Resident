@@ -55,6 +55,9 @@ Page({
     this.showModal({
       msg: '登录成功'
     })
+    wx.navigateTo({
+      url: '/pages/home/home'
+    })
   },
 
   formReset(e) {

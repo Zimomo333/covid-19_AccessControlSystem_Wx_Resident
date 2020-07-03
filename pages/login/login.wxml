@@ -1,32 +1,18 @@
 <!--pages/login.wxml-->
 <view class="container">
-  <view class="page-body">
-    <form catchsubmit="formSubmit" catchreset="formReset">
-
-      <view class="page-section">
-        <view class="page-section-title">用户名</view>
-        <view class="weui-cells weui-cells_after-title">
-          <view class="weui-cell weui-cell_input">
-            <view class="weui-cell__bd" style="margin: 30rpx 0" >
-              <input class="weui-input" name="username" placeholder="请输入用户名" />
-            </view>
-          </view>
-        </view>
-        <view class="page-section-title">密码</view>
-        <view class="weui-cells weui-cells_after-title">
-          <view class="weui-cell weui-cell_input">
-            <view class="weui-cell__bd" style="margin: 30rpx 0" >
-              <input class="weui-input" name="password" password type="text" placeholder="请输入密码" />
-            </view>
-          </view>
-        </view>
-      </view>
-
-      <view class="btn-area">
-        <button style="margin: 30rpx 0" type="primary" formType="submit">登录</button>
-        <button style="margin: 30rpx 0" formType="reset">重置</button>
-      </view>
-    </form>
-  </view>
+  <form catchsubmit="formSubmit" catchreset="formReset">
+    <view class="cu-form-group">
+      <view class="title">用户名:</view>
+      <input name="username" placeholder="请输入用户名"></input>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">密码　:</view>
+      <input name="password" password type="text" placeholder="请输入密码"></input>
+    </view>
+    <view class="btn-area">
+      <button style="margin-top: 10px;margin-bottom:10px;" type="primary" formType="submit">登录</button>
+      <button formType="reset">重置</button>
+    </view>
+  </form>
 
 </view>

@@ -1,2 +1,15 @@
 <!--pages/home/home.wxml-->
-<text>pages/home/home.wxml</text>
+<swiper class="screen-swiper square-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
+  <swiper-item wx:for="{{swiperList}}" wx:key>
+    <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+    <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+  </swiper-item>
+</swiper>
+<view class='nav-list' style="margin-top:35px;">
+  <navigator open-type="navigate" hover-class='none' url="/pages/basics/{{item.name}}/{{item.name}}" class="nav-li bg-{{item.color}}" wx:for="{{elements}}" wx:key>
+    <view class="nav-title">{{item.title}}</view>
+    <view class="nav-name">{{item.name}}</view>
+    <text class='cuIcon-{{item.icon}}'></text>
+  </navigator>
+</view>
+<view class='cu-tabbar-height'></view>

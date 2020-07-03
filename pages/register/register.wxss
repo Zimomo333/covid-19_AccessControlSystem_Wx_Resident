@@ -1,1 +1,17 @@
 /* pages/register/register.wxss */
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.cu-form-group .title {
+  min-width: calc(4em + 30rpx);
+}

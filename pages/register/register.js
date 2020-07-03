@@ -1,5 +1,6 @@
 // pages/register/register.js
 import WxValidate from '../../utils/WxValidate.js'
+const app = getApp()
 
 Page({
   data: {
@@ -9,12 +10,20 @@ Page({
       confirm_password: '',
       sex: '',
       identity_card: '',
-      house_no: ''
-    }
+      house_no: '',
+      avatarUrl: '',
+    },
+    openid: '',
+    userInfo: {},
+    hasUserInfo: false,
+    canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
 
-  onLoad:function(){
+  onLoad: function() {
     this.initValidate();
+    this.setData({  //比app.js加载慢得多，无需异步callback
+      openid: app.globalData.openid
+    })
   },
 
   //报错 
@@ -27,6 +36,9 @@ Page({
   //验证函数
   initValidate() {
     const rules = {
+      avatarUrl: {
+        required: true
+      },
       username: {
         required: true,
         maxlength: 20
@@ -52,6 +64,9 @@ Page({
       }
     }
     const messages = {
+      avatarUrl: {
+        required: '请获取微信头像'
+      },
       username: {
         required: '请填写用户名',
         maxlength: '用户名最多为 20 位'
@@ -91,9 +106,20 @@ Page({
     this.showModal({
       msg: '提交成功'
     })
+    wx.navigateTo({
+      url: '/pages/home/home'
+    })
   },
 
   formReset(e) {
     console.log('form发生了reset事件，携带数据为：', e.detail.value)
+  },
+
+  getUserInfo: function(e) {
+    app.globalData.userInfo = e.detail.userInfo
+    this.setData({
+      userInfo: e.detail.userInfo,
+      hasUserInfo: true
+    })
   }
 })

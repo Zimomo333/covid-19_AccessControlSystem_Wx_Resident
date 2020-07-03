@@ -4,7 +4,12 @@
     "pages/logs/logs",
     "pages/login/login",
     "pages/register/register",
-    "pages/home/home"
+    "pages/home/home",
+    "pages/home/bind/bind",
+    "pages/home/info/info",
+    "pages/home/password/password",
+    "pages/home/qrcode/qrcode",
+    "pages/home/record/record"
   ],
   "window": {
     "backgroundTextStyle": "light",

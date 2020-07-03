@@ -1,71 +1,44 @@
 <!--pages/register/register.wxml-->
 <!--pages/login.wxml-->
-<view class="container">
-  <view class="page-body">
-    <form catchsubmit="formSubmit" catchreset="formReset">
-
-      <view class="page-section">
-        <view class="page-section-title">用户名</view>
-        <view class="weui-cells weui-cells_after-title">
-          <view class="weui-cell weui-cell_input">
-            <view class="weui-cell__bd" style="margin: 30rpx 0" >
-              <input class="weui-input" name="username" value="{{form.username}}" placeholder="请输入用户名" />
-            </view>
-          </view>
-        </view>
-        <view class="page-section-title">密码</view>
-        <view class="weui-cells weui-cells_after-title">
-          <view class="weui-cell weui-cell_input">
-            <view class="weui-cell__bd" style="margin: 30rpx 0" >
-              <input class="weui-input" name="password" value="{{form.password}}" password type="text" placeholder="请输入密码" />
-            </view>
-          </view>
-        </view>
-        <view class="page-section-title">确认密码</view>
-        <view class="weui-cells weui-cells_after-title">
-          <view class="weui-cell weui-cell_input">
-            <view class="weui-cell__bd" style="margin: 30rpx 0" >
-              <input class="weui-input" name="confirm_password" value="{{form.confirm_password}}" password type="text" placeholder="请确认密码" />
-            </view>
-          </view>
-        </view>
-        <view class="page-section-title">性别</view>
-        <view class="weui-cells weui-cells_after-title">
-          <view class="weui-cell weui-cell_input">
-            <view class="weui-cell__bd" style="margin: 30rpx 0" >
-              <view class="page-section page-section-gap">
-                <radio-group name="sex" value="{{sex}}">
-                  <label><radio value="1"/>男</label>
-                  <label><radio value="2"/>女</label>
-                </radio-group>
-              </view>
-            </view>
-          </view>
-        </view>
-        <view class="weui-cells__title">身份证</view>
-        <view class="weui-cells weui-cells_after-title">
-          <view class="weui-cell weui-cell_input">
-            <view class="weui-cell__bd" style="margin: 30rpx 0" >
-              <input class="weui-input" name="identity_card" value="{{form.identity_card}}" type="idcard" placeholder="请输入身份证" />
-            </view>
-          </view>
-        </view>
-        <view class="page-section-title">住址号</view>
-        <view class="weui-cells weui-cells_after-title">
-          <view class="weui-cell weui-cell_input">
-            <view class="weui-cell__bd" style="margin: 30rpx 0" >
-              <input class="weui-input" name="house_no" value="{{form.house_no}}" placeholder="请输入住址号" />
-            </view>
-          </view>
-        </view>
-      </view>
-
-      <view class="btn-area">
-        <button style="margin: 30rpx 0" type="primary" formType="submit">注册</button>
-        <button style="margin: 30rpx 0" formType="reset">重置</button>
-      </view>
-    </form>
+<form catchsubmit="formSubmit" catchreset="formReset">
+  <view class="cu-form-group margin-top">
+    <view class="title">头像</view>
+    <button size="mini" wx:if="{{!hasUserInfo && canIUse}}" type="primary" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取微信头像 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <input class="weui-input" name="avatarUrl" value="{{userInfo.avatarUrl}}" hidden />
+    </block>
   </view>
-
-</view>
-
+  <view class="cu-form-group">
+    <view class="title">用户名</view>
+    <input name="username" value="{{form.username}}" placeholder="请输入用户名"></input>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">密码</view>
+    <input name="password" value="{{form.password}}" password type="text" placeholder="请输入密码"></input>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">确认密码</view>
+    <input name="confirm_password" value="{{form.confirm_password}}" password type="text" placeholder="请确认密码"></input>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">性别</view>
+    <radio-group name="sex" value="{{sex}}">
+      <label><radio value="1"/>　男　</label>
+      <label><radio value="2"/>　女　</label>
+    </radio-group>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">身份证</view>
+    <input name="identity_card" value="{{form.identity_card}}" type="idcard" placeholder="请输入身份证"></input>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">住址号</view>
+    <input name="username" placeholder="请输入用户名"name="house_no" value="{{form.house_no}}" placeholder="请输入住址号"></input>
+  </view>
+  <input class="weui-input" name="openid" value="{{openid}}" hidden />
+  <view class="btn-area">
+    <button style="margin-top: 10px;margin-bottom:10px;" type="primary" formType="submit">注册</button>
+    <button formType="reset">重置</button>
+  </view>
+</form>
