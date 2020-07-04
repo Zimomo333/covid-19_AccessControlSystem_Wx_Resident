@@ -37,37 +37,43 @@ Component({
         title: '二维码',
         name: 'QRcode',
         color: 'cyan',
-        icon: 'qr_code'
+        icon: 'qr_code',
+        url: 'qrcode'
       },
       {
         title: '出入记录',
         name: 'Record',
         color: 'blue',
-        icon: 'text'
+        icon: 'text',
+        url: 'record'
       },
       {
         title: '个人信息',
         name: 'Information',
         color: 'purple',
-        icon: 'newsfill'
+        icon: 'newsfill',
+        url: 'info'
       },
       {
         title: '修改密码',
         name: 'Password',
         color: 'mauve',
-        icon: 'lock'
+        icon: 'lock',
+        url: 'password'
       },
       {
         title: '解除绑定',
         name: 'Binding',
         color: 'pink',
-        icon: 'weixin'
+        icon: 'weixin',
+        url: 'bind'
       },
       {
         title: '退出',
         name: 'Exit',
         color: 'brown',
-        icon: 'exit'
+        icon: 'exit',
+        url: 'exit'
       },
     ]
   },

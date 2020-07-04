@@ -6,7 +6,7 @@
   </swiper-item>
 </swiper>
 <view class='nav-list' style="margin-top:35px;">
-  <navigator open-type="navigate" hover-class='none' url="/pages/basics/{{item.name}}/{{item.name}}" class="nav-li bg-{{item.color}}" wx:for="{{elements}}" wx:key>
+  <navigator open-type="navigate" hover-class='none' url="/pages/home/{{item.url}}/{{item.url}}" class="nav-li bg-{{item.color}}" wx:for="{{elements}}" wx:key>
     <view class="nav-title">{{item.title}}</view>
     <view class="nav-name">{{item.name}}</view>
     <text class='cuIcon-{{item.icon}}'></text>

@@ -1,2 +1,4 @@
 <!--pages/home/qrcode/qrcode.wxml-->
-<text>pages/home/qrcode/qrcode.wxml</text>
+<view class="container">
+  <image src='{{QRcodeUrl}}' style="width:250px"></image>
+</view>
