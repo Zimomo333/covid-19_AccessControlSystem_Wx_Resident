@@ -1,4 +1,4 @@
-/* pages/home/info/info.wxss */
+/* pages/home/info/edit/edit.wxss */
 .userinfo-avatar {
   width: 128rpx;
   height: 128rpx;

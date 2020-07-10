@@ -1,66 +1,50 @@
-// pages/home/info/info.js
+const app = getApp()
+
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    id: '',
+    username: '',
+    name: '',
+    sex: '',
+    identity_card: '',
+    photo: '',
+    house_no: '',
+    health_status: '',
+    access_times: '',
+    is_locked: '',
+    openid: ''
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  onLoad: function() {
+    this.setData({
+      openid: app.globalData.openid
+    })
+    wx.request({
+      url: 'http://localhost:8080/wx/info',
+      data: {
+        openid: this.data.openid
+      },
+      success: res => {
+        this.setData({
+          id: res.data.id,
+          username: res.data.username,
+          name: res.data.name,
+          sex: res.data.sex,
+          identity_card: res.data.identity_card,
+          photo: res.data.photo,
+          house_no:  res.data.house_no,
+          health_status: res.data.health_status,
+          access_times: res.data.access_times,
+          is_locked: res.data.is_locked
+        })
+      }
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  formSubmit(e) {
+    wx.navigateTo({
+      url: '/pages/home/info/edit/edit'
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

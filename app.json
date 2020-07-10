@@ -9,7 +9,8 @@
     "pages/home/info/info",
     "pages/home/password/password",
     "pages/home/qrcode/qrcode",
-    "pages/home/record/record"
+    "pages/home/record/record",
+    "pages/home/info/edit/edit"
   ],
   "window": {
     "backgroundTextStyle": "light",

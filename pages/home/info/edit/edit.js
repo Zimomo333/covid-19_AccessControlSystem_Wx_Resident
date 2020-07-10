@@ -1,27 +1,30 @@
-// pages/register/register.js
-import WxValidate from '../../utils/WxValidate.js'
+import WxValidate from '../../../../utils/WxValidate.js'
 const app = getApp()
 
 Page({
   data: {
     form: {   //注意必须在form包裹下，否则equalTo无效
-      username: '',
-      password: '',
-      confirm_password: '',
       sex: '',
       identity_card: '',
-      house_no: '',
-      photo: '',
+      house_no: ''
     },
+    photo: '',
     openid: '',
-    userInfo: {},
-    hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
 
   onLoad: function() {
     this.initValidate();
-    this.setData({  //比app.js加载慢得多，无需异步callback
+    //获取上一页变量
+    var pages = getCurrentPages();
+    var prevPage = pages[pages.length - 2];  //上一个页面
+    this.setData({
+      form: {
+        sex:prevPage.data.sex,
+        identity_card: prevPage.data.identity_card,
+        house_no: prevPage.data.house_no
+      },
+      photo: prevPage.data.photo,
       openid: app.globalData.openid
     })
   },
@@ -36,21 +39,6 @@ Page({
   //验证函数
   initValidate() {
     const rules = {
-      photo: {
-        required: true
-      },
-      username: {
-        required: true,
-        maxlength: 20
-      },
-      password: {
-        required: true,
-        maxlength: 20
-      },
-      confirm_password: {
-        required: true,
-        equalTo: 'password'
-      },
       sex: {
         required: true
       },
@@ -64,21 +52,6 @@ Page({
       }
     }
     const messages = {
-      photo: {
-        required: '请获取微信头像'
-      },
-      username: {
-        required: '请填写用户名',
-        maxlength: '用户名最多为 20 位'
-      },
-      password: {
-        required: '请填写密码',
-        maxlength: '密码最多为 20 位'
-      },
-      confirm_password: {
-        required: '请确认密码',
-        equalTo: '输入的两次密码不一致'
-      },
       sex: {
         required: '请填写性别'
       },
@@ -104,25 +77,21 @@ Page({
       return false
     }
     this.showModal({
-      msg: '提交成功'
+      msg: '修改成功'
     })
     wx.navigateTo({
-      url: '/pages/home/home'
+      url: '/pages/home/info/info'
     })
   },
 
   formReset(e) {
     console.log('form发生了reset事件，携带数据为：', e.detail.value)
-    this.setData({    //重置头像
-      hasUserInfo: false
-    })
   },
 
   getUserInfo: function(e) {
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
+      photo: e.detail.userInfo.avatarUrl
     })
   }
 })

@@ -1,0 +1,38 @@
+<!--pages/home/info/edit/edit.wxml-->
+<form catchsubmit="formSubmit" catchreset="formReset">
+  <view class="cu-form-group margin-top">
+    <view class="title">头像</view>
+    <button size="mini" wx:if="{{canIUse}}" type="primary" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 更新微信头像 </button>
+    <image bindtap="bindViewTap" class="userinfo-avatar" src="{{photo}}" mode="cover"></image>
+    <input class="weui-input" name="photo" value="{{photo}}" hidden />
+  </view>
+  <view class="cu-form-group">
+    <view class="title">性别</view>
+    <radio-group name="sex" value="{{form.sex}}">
+      <view wx:if="{{form.sex == 1}}">
+      <label><radio value="1" checked/>　男　</label>
+      <label><radio value="2"/>　女　</label>
+      </view>
+      <view wx:elif="{{form.sex == 2}}">
+      <label><radio value="1" />　男　</label>
+      <label><radio value="2" checked/>　女　</label>
+      </view>
+      <view wx:else>
+      <label><radio value="1" />　男　</label>
+      <label><radio value="2" />　女　</label>
+      </view>
+    </radio-group>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">身份证</view>
+    <input name="identity_card" value="{{form.identity_card}}" type="idcard" placeholder="请输入身份证"></input>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">住址号</view>
+    <input name="username" placeholder="请输入用户名"name="house_no" value="{{form.house_no}}" placeholder="请输入住址号"></input>
+  </view>
+  <input class="weui-input" name="openid" value="{{openid}}" hidden />
+  <view class="btn-area">
+    <button style="margin-top: 10px;margin-bottom:10px;" type="primary" formType="submit">提交修改</button>
+  </view>
+</form>

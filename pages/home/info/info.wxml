@@ -1,2 +1,44 @@
 <!--pages/home/info/info.wxml-->
-<text>pages/home/info/info.wxml</text>
+<form catchsubmit="formSubmit" catchreset="formReset">
+  <view class="cu-form-group margin-top">
+    <view class="title">头像</view>
+    <image bindtap="bindViewTap" class="userinfo-avatar" src="{{photo}}" mode="cover"></image>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">用户名</view>
+    {{username}}
+  </view>
+  <view class="cu-form-group">
+    <view class="title">姓名</view>
+    {{name}}
+  </view>
+  <view class="cu-form-group">
+    <view class="title">性别</view>
+    {{sex}}
+  </view>
+  <view class="cu-form-group">
+    <view class="title">身份证</view>
+    {{identity_card}}
+  </view>
+  <view class="cu-form-group">
+    <view class="title">住址号</view>
+    {{house_no}}
+  </view>
+  <view class="cu-form-group">
+    <view class="title">连续高烧天数</view>
+    {{health_status}}
+  </view>
+  <view class="cu-form-group">
+    <view class="title">出入次数</view>
+    {{access_times}}
+  </view>
+  <view class="cu-form-group">
+    <view class="title">锁定状态</view>
+    {{is_locked}}
+  </view>
+  <input class="weui-input" name="openid" value="{{openid}}" hidden />
+  <view class="btn-area">
+    <button style="margin-top: 10px;margin-bottom:10px;" type="primary" formType="submit">修改信息</button>
+  </view>
+</form>
+

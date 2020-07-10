@@ -1,12 +1,11 @@
 <!--pages/register/register.wxml-->
-<!--pages/login.wxml-->
 <form catchsubmit="formSubmit" catchreset="formReset">
   <view class="cu-form-group margin-top">
     <view class="title">头像</view>
     <button size="mini" wx:if="{{!hasUserInfo && canIUse}}" type="primary" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取微信头像 </button>
     <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <input class="weui-input" name="avatarUrl" value="{{userInfo.avatarUrl}}" hidden />
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.photo}}" mode="cover"></image>
+      <input class="weui-input" name="photo" value="{{userInfo.photo}}" hidden />
     </block>
   </view>
   <view class="cu-form-group">
