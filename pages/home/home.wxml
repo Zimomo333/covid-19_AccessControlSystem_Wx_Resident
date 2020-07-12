@@ -11,5 +11,10 @@
     <view class="nav-name">{{item.name}}</view>
     <text class='cuIcon-{{item.icon}}'></text>
   </navigator>
+  <navigator open-type="exit" hover-class='none' target="miniProgram"  class="nav-li bg-brown">
+    <view class="nav-title">退出</view>
+    <view class="nav-name">Exit</view>
+    <text class='cuIcon-exit'></text>
+  </navigator>
 </view>
 <view class='cu-tabbar-height'></view>

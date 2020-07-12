@@ -7,31 +7,27 @@ Component({
     swiperList: [{
       id: 0,
       type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg'
+      url: 'http://wx3.sinaimg.cn/large/007dHF5Jgy1gboys8n78cj30hs0a0k1y.jpg'
     }, {
       id: 1,
         type: 'image',
-        url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84001.jpg',
+        url: 'http://img3.imgtn.bdimg.com/it/u=912344757,1797410610&fm=15&gp=0.jpg',
     }, {
       id: 2,
       type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big39000.jpg'
+      url: 'http://www.woc88.com/FileRoot4/2020-2/28/9273aa7c-5a93-4394-8315-c3a3d6aff582//mobliepic/1.png'
     }, {
       id: 3,
       type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg'
+      url: 'http://img5.imgtn.bdimg.com/it/u=1057924158,700135667&fm=15&gp=0.jpg'
     }, {
       id: 4,
       type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big25011.jpg'
+      url: 'http://img.zcool.cn/community/01b8355e2f90c5a801216518f56466.jpg@3000w_1l_0o_100sh.jpg'
     }, {
       id: 5,
       type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big21016.jpg'
-    }, {
-      id: 6,
-      type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg'
+      url: 'http://img2.imgtn.bdimg.com/it/u=1946654567,3359226007&fm=26&gp=0.jpg'
     }],
     elements: [{
         title: '二维码',
@@ -67,14 +63,7 @@ Component({
         color: 'pink',
         icon: 'weixin',
         url: 'bind'
-      },
-      {
-        title: '退出',
-        name: 'Exit',
-        color: 'brown',
-        icon: 'exit',
-        url: 'exit'
-      },
+      }
     ]
   },
   onLoad() {

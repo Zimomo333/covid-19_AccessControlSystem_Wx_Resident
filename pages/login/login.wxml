@@ -1,5 +1,8 @@
 <!--pages/login.wxml-->
 <view class="container">
+  <view class="text-center text-shadow text-black text-bold" style="font-size:25px;margin-bottom:30px;">
+    账号登录
+  </view>
   <form catchsubmit="formSubmit" catchreset="formReset">
     <view class="cu-form-group">
       <view class="title">用户名:</view>
@@ -10,7 +13,7 @@
       <input name="password" password type="text" placeholder="请输入密码"></input>
     </view>
     <view class="btn-area">
-      <button style="margin-top: 10px;margin-bottom:10px;" type="primary" formType="submit">登录</button>
+      <button style="margin-top: 20px;margin-bottom:10px;" type="primary" formType="submit">登录</button>
       <button formType="reset">重置</button>
     </view>
   </form>

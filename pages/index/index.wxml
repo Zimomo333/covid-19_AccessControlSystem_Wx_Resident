@@ -1,5 +1,8 @@
 <!--index.wxml-->
 <view class="container">
+  <view class="text-center text-shadow text-purple text-bold" style="font-size:25px;">
+    智慧社区电子出入证
+  </view>
   <view class="index">
     <button class="cu-btn bg-olive lg" style="margin-top: 50px;" bindtap="goToRegister" wx:if="{{!registerSign}}">
     <text class="cuIcon-weixin" style="font-size:18px">　新用户注册</text></button>

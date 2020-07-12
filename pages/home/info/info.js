@@ -12,17 +12,13 @@ Page({
     health_status: '',
     access_times: '',
     is_locked: '',
-    openid: ''
   },
 
   onLoad: function() {
-    this.setData({
-      openid: app.globalData.openid
-    })
     wx.request({
       url: 'http://localhost:8080/wx/info',
       data: {
-        openid: this.data.openid
+        id: app.globalData.id
       },
       success: res => {
         this.setData({

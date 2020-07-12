@@ -1,4 +1,7 @@
 <!--pages/register/register.wxml-->
+<view class="text-center text-shadow text-black text-bold" style="font-size:20px;margin-top:10px;">
+    新用户注册
+</view>
 <form catchsubmit="formSubmit" catchreset="formReset">
   <view class="cu-form-group margin-top">
     <view class="title">头像</view>

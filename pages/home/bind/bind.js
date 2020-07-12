@@ -1,66 +1,72 @@
 // pages/home/bind/bind.js
+const app = getApp()
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    is_bind: null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.request({
+      url: 'http://localhost:8080wx/resident/if-bind',
+      data: {
+        id: app.globalData.id
+      },
+      success: res => {
+        this.is_bind = res.data.is_bind
+      }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  bind(){
+    wx.request({
+      url: 'http://localhost:8080/wx/resident/bind',
+      data: {
+        id: app.globalData.id,
+        openid: app.globalData.openid
+      },
+      success: res => {
+        if(res.result==1){
+          wx.showModal({
+            content: "绑定成功",
+            showCancel: false,
+          })
+          this.is_bind=true
+        } else {
+          wx.showModal({
+            content: "绑定失败",
+            showCancel: false,
+          })
+        }
+      }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  cancelBind(){
+    wx.request({
+      url: 'http://localhost:8080/wx/resident/cancel-bind',
+      data: {
+        id: app.globalData.id
+      },
+      success: res => {
+        if(res.result==1){
+          wx.showModal({
+            content: "解绑成功",
+            showCancel: false,
+          })
+          this.is_bind=false
+        } else {
+          wx.showModal({
+            content: "解绑失败",
+            showCancel: false,
+          })
+        }
+      }
+    })
   }
 })

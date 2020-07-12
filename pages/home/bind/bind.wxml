@@ -1,2 +1,7 @@
 <!--pages/home/bind/bind.wxml-->
-<text>pages/home/bind/bind.wxml</text>
+<view class="container">
+  <view class="btn-area">
+    <button style="margin-top: 10px;margin-bottom:10px;" type="primary" bindtap="bind" wx:if="{{!is_bind}}">绑定微信</button>
+    <button style="margin-top: 10px;margin-bottom:10px;" type="primary" bindtap="cancelBind" wx:if="{{is_bind}}">解除绑定</button>
+  </view>
+</view>
