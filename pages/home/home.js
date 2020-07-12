@@ -15,7 +15,7 @@ Component({
     }, {
       id: 2,
       type: 'image',
-      url: 'http://www.woc88.com/FileRoot4/2020-2/28/9273aa7c-5a93-4394-8315-c3a3d6aff582//mobliepic/1.png'
+      url: 'http://img2.imgtn.bdimg.com/it/u=3548009499,3472389903&fm=15&gp=0.jpg'
     }, {
       id: 3,
       type: 'image',

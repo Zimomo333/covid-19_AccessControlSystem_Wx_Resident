@@ -24,8 +24,8 @@
     </radio-group>
   </view>
   <view class="cu-form-group">
-    <view class="title">身份证</view>
-    <input name="identity_card" value="{{form.identity_card}}" type="idcard" placeholder="请输入身份证"></input>
+    <view class="title">神号</view>
+    <input name="identity_card" value="{{form.identity_card}}" type="idcard" placeholder="请输入神号"></input>
   </view>
   <view class="cu-form-group">
     <view class="title">住址号</view>

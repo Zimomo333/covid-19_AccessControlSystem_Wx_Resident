@@ -21,7 +21,7 @@
     {{sex}}
   </view>
   <view class="cu-form-group">
-    <view class="title">身份证</view>
+    <view class="title">神号</view>
     {{identity_card}}
   </view>
   <view class="cu-form-group">
