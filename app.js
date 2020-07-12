@@ -13,7 +13,7 @@ App({
         if (res.code) {
           //发起网络请求
           wx.request({
-            url: 'http://localhost:8080/wx/openid',
+            url: 'http://localhost:8080//wx/resident/getOpenid',
             data: {
               code: res.code
             },
@@ -56,6 +56,7 @@ App({
   globalData: {
     userInfo: null,
     openid: null,
-    registerSign: null
+    registerSign: null,
+    id: null
   }
 })

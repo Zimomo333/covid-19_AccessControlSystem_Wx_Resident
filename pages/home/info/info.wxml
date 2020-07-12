@@ -5,6 +5,10 @@
     <image bindtap="bindViewTap" class="userinfo-avatar" src="{{photo}}" mode="cover"></image>
   </view>
   <view class="cu-form-group">
+    <view class="title">住户id</view>
+    {{id}}
+  </view>
+  <view class="cu-form-group">
     <view class="title">用户名</view>
     {{username}}
   </view>

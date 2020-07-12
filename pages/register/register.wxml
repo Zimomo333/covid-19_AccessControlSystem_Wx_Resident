@@ -21,6 +21,10 @@
     <input name="confirm_password" value="{{form.confirm_password}}" password type="text" placeholder="请确认密码"></input>
   </view>
   <view class="cu-form-group">
+    <view class="title">姓名</view>
+    <input name="name" value="{{form.name}}" placeholder="请输入姓名"></input>
+  </view>
+  <view class="cu-form-group">
     <view class="title">性别</view>
     <radio-group name="sex" value="{{sex}}">
       <label><radio value="1"/>　男　</label>
@@ -35,7 +39,6 @@
     <view class="title">住址号</view>
     <input name="username" placeholder="请输入用户名"name="house_no" value="{{form.house_no}}" placeholder="请输入住址号"></input>
   </view>
-  <input class="weui-input" name="openid" value="{{openid}}" hidden />
   <view class="btn-area">
     <button style="margin-top: 10px;margin-bottom:10px;" type="primary" formType="submit">注册</button>
     <button formType="reset">重置</button>

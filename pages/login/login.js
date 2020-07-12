@@ -52,11 +52,39 @@ Page({
       this.showModal(error)
       return false
     }
-    this.showModal({
-      msg: '登录成功'
-    })
     wx.navigateTo({
       url: '/pages/home/home'
+    })
+    wx.request({
+      url: 'http://localhost:8080/wx/resident/login',
+      data: {
+        username: this.username,
+        password: this.password
+      },
+      success: res => {
+        var result = res.data.result
+        if(result == 0){
+          app.globalData.id = res.data.id
+          wx.navigateTo({
+            url: '/pages/home/home'
+          })
+        } else if (result == 1) {
+          this.showModal({
+            msg: '密码错误'
+          })
+          return false
+        } else if (result == 2) {
+          this.showModal({
+            msg: '用户名不存在'
+          })
+          return false
+        } else if (result == 3) {
+          this.showModal({
+            msg: '读写错误'
+          })
+          return false
+        }
+      }
     })
   },
 

@@ -1,2 +1,13 @@
 <!--pages/home/record/record.wxml-->
-<text>pages/home/record/record.wxml</text>
+<view class="cu-bar bg-white solid-bottom margin-top">
+    <view class="action">
+      id　　　　　体温　　　日期　　　　　检查员
+    </view>
+  </view>
+<view class="cu-list menu">
+  <view class="cu-item">
+    <view class="content">
+      <text class="text-grey">图标 + 标题</text>
+    </view>
+  </view>
+  </view>

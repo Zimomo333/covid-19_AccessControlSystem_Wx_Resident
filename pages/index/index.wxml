@@ -1,7 +1,9 @@
 <!--index.wxml-->
 <view class="container">
   <view class="index">
-    <button class="cu-btn bg-olive lg" style="margin-top: 50px;" bindtap="goToWxLogin">
+    <button class="cu-btn bg-olive lg" style="margin-top: 50px;" bindtap="goToRegister" wx:if="{{!registerSign}}">
+    <text class="cuIcon-weixin" style="font-size:18px">　新用户注册</text></button>
+    <button class="cu-btn bg-olive lg" style="margin-top: 50px;" bindtap="goToWxLogin" wx:if="{{registerSign}}">
     <text class="cuIcon-weixin" style="font-size:18px">　微信登录</text></button>
     <button class="cu-btn bg-cyan lg" style="margin-top: 50px;" bindtap="goToLogin">
     <text class="cuIcon-myfill" style="font-size:18px">　账号登录</text></button>

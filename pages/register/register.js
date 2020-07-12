@@ -8,12 +8,12 @@ Page({
       username: '',
       password: '',
       confirm_password: '',
+      name: '',
       sex: '',
       identity_card: '',
       house_no: '',
       photo: '',
     },
-    openid: '',
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
@@ -21,9 +21,6 @@ Page({
 
   onLoad: function() {
     this.initValidate();
-    this.setData({  //比app.js加载慢得多，无需异步callback
-      openid: app.globalData.openid
-    })
   },
 
   //报错 
@@ -50,6 +47,10 @@ Page({
       confirm_password: {
         required: true,
         equalTo: 'password'
+      },
+      name: {
+        required: true,
+        maxlength: 20
       },
       sex: {
         required: true
@@ -79,6 +80,10 @@ Page({
         required: '请确认密码',
         equalTo: '输入的两次密码不一致'
       },
+      name: {
+        required: '请填写姓名',
+        maxlength: '性名最多为 20 位'
+      },
       sex: {
         required: '请填写性别'
       },
@@ -103,11 +108,42 @@ Page({
       this.showModal(error)
       return false
     }
-    this.showModal({
-      msg: '提交成功'
-    })
-    wx.navigateTo({
-      url: '/pages/home/home'
+    wx.request({
+      url: 'http://localhost:8080/wx/resident/register',
+      data: {
+        username: this.username,
+        password: this.password,
+        confirm_password: this.confirm_password,
+        sex: this.sex,
+        identity_card: this.identity_card,
+        house_no: this.house_no,
+        photo: this.photo,
+        openid: app.globalData.openid
+      },
+      success: res => {
+        var result = res.data.result
+        if(result == 0){
+          app.globalData.id = res.data.id
+          wx.navigateTo({
+            url: '/pages/home/home'
+          })
+        } else if (result == 1) {
+          this.showModal({
+            msg: '用户名已被注册'
+          })
+          return false
+        } else if (result == 2) {
+          this.showModal({
+            msg: '两次密码不一致'
+          })
+          return false
+        } else if (result == 3) {
+          this.showModal({
+            msg: '读写错误'
+          })
+          return false
+        }
+      }
     })
   },
 
