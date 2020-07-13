@@ -9,7 +9,6 @@ Page({
       house_no: ''
     },
     photo: '',
-    openid: '',
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
 
@@ -24,8 +23,7 @@ Page({
         identity_card: prevPage.data.identity_card,
         house_no: prevPage.data.house_no
       },
-      photo: prevPage.data.photo,
-      openid: app.globalData.openid
+      photo: prevPage.data.photo
     })
   },
 

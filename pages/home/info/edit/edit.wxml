@@ -29,9 +29,8 @@
   </view>
   <view class="cu-form-group">
     <view class="title">住址号</view>
-    <input name="username" placeholder="请输入用户名"name="house_no" value="{{form.house_no}}" placeholder="请输入住址号"></input>
+    <input name="username" name="house_no" value="{{form.house_no}}" placeholder="请输入住址号"></input>
   </view>
-  <input class="weui-input" name="openid" value="{{openid}}" hidden />
   <view class="btn-area">
     <button style="margin-top: 10px;margin-bottom:10px;" type="primary" formType="submit">提交修改</button>
   </view>
