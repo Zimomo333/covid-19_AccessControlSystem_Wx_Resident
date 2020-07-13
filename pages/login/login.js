@@ -53,9 +53,6 @@ Page({
       this.showModal(error)
       return false
     }
-    wx.navigateTo({
-      url: '/pages/home/home'
-    })
     wx.request({
       url: app.globalData.ip+'/wx/resident/login',
       data: {
