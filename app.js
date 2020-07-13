@@ -54,7 +54,7 @@ App({
     })
   },
   globalData: {
-    ip: 'http://localhost:8080',
+    ip: 'http://120.25.121.196:8080',
     openid: null,
     registerSign: null,
     id: null
