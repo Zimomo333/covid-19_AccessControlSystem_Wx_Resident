@@ -67,9 +67,9 @@ Page({
       url: app.globalData.ip+'/wx/resident/change-pwd',
       data: {
         id: app.globalData.id,
-        old_password: this.old_password,
-        password: this.password,
-        confirm_password: this.confirm_password
+        old_password: params.old_password,
+        password: params.password,
+        confirm_password: params.confirm_password
       },
       success: res => {
         var result = res.data.result
