@@ -82,7 +82,8 @@ Page({
         id: app.globalData.id,
         sex: this.form.sex,
         identity_card: this.form.identity_card,
-        house_no: this.form.house_no
+        house_no: this.form.house_no,
+        photo: this.photo
       },
       success: res => {
         var result = res.data.result
