@@ -56,7 +56,7 @@ App({
   globalData: {
     ip: 'http://localhost:8080',
     openid: null,
-    bindSign: null,
+    registerSign: null,
     id: null
   }
 })
