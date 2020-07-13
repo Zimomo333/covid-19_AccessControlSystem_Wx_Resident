@@ -76,11 +76,31 @@ Page({
       this.showModal(error)
       return false
     }
-    this.showModal({
-      msg: '修改成功'
-    })
-    wx.navigateTo({
-      url: '/pages/home/info/info'
+    wx.request({
+      url: app.globalData.ip+'/wx/resident/edit',
+      data: {
+        id: app.globalData.id,
+        sex: this.form.sex,
+        identity_card: this.form.identity_card,
+        house_no: this.form.house_no
+      },
+      success: res => {
+        var result = res.data.result
+        if(result == 0){
+          app.globalData.id = res.data.id
+          this.showModal({
+            msg: '修改成功'
+          })
+          wx.navigateTo({
+            url: '/pages/home/info/info'
+          })
+        } else if (result == 1) {
+          this.showModal({
+            msg: '读写错误'
+          })
+          return false
+        }
+      }
     })
   },
 

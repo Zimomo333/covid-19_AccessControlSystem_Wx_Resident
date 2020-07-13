@@ -13,13 +13,13 @@ App({
         if (res.code) {
           //发起网络请求
           wx.request({
-            url: 'http://localhost:8080//wx/resident/getOpenid',
+            url: this.globalData.ip+'/wx/resident/getOpenid',
             data: {
               code: res.code
             },
             success: res => {
               this.globalData.openid = res.data.openid,
-              this.globalData.registerSign = res.data.registerSign
+              this.globalData.bindSign = res.data.bindSign
               // 由于 getOpenid 是网络请求，可能会在 Page.onLoad 之后才返回
               // 所以此处加入 callback 以防止这种情况
               if (this.openidReadyCallback) {
@@ -54,9 +54,9 @@ App({
     })
   },
   globalData: {
-    userInfo: null,
+    ip: 'http://localhost:8080',
     openid: null,
-    registerSign: null,
+    bindSign: null,
     id: null
   }
 })

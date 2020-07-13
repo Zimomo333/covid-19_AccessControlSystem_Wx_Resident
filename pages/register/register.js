@@ -109,7 +109,7 @@ Page({
       return false
     }
     wx.request({
-      url: 'http://localhost:8080/wx/resident/register',
+      url: app.globalData.ip+'/wx/resident/register',
       data: {
         username: this.username,
         password: this.password,

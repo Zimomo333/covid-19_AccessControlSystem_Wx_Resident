@@ -4,36 +4,33 @@ const app = getApp()
 
 Page({
   data: {
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo'),
     openid: null,
     registerSign: false,
     cardCur: 0,
     swiperList: [{
       id: 0,
       type: 'image',
-      url: 'http://wx3.sinaimg.cn/large/007dHF5Jgy1gboys8n78cj30hs0a0k1y.jpg'
+      url: '/picture/1.jpg'
     }, {
       id: 1,
         type: 'image',
-        url: 'http://img3.imgtn.bdimg.com/it/u=912344757,1797410610&fm=15&gp=0.jpg',
+        url: '/picture/2.jpg'
     }, {
       id: 2,
       type: 'image',
-      url: 'http://img2.imgtn.bdimg.com/it/u=3548009499,3472389903&fm=15&gp=0.jpg'
+      url: '/picture/3.jpg'
     }, {
       id: 3,
       type: 'image',
-      url: 'http://img5.imgtn.bdimg.com/it/u=1057924158,700135667&fm=15&gp=0.jpg'
+      url: '/picture/4.jpg'
     }, {
       id: 4,
       type: 'image',
-      url: 'http://img.zcool.cn/community/01b8355e2f90c5a801216518f56466.jpg@3000w_1l_0o_100sh.jpg'
+      url: '/picture/5.jpg'
     }, {
       id: 5,
       type: 'image',
-      url: 'http://img2.imgtn.bdimg.com/it/u=1946654567,3359226007&fm=26&gp=0.jpg'
+      url: '/picture/6.jpg'
     }]
   },
   //事件处理函数
@@ -62,7 +59,7 @@ Page({
   },
   goToWxLogin: function(e) {
     wx.request({
-      url: 'http://localhost:8080/wx/resident/wx-login',
+      url: app.globalData.ip+'/wx/resident/wx-login',
       data: {
         openid: this.openid
       },

@@ -16,7 +16,7 @@ Page({
 
   onLoad: function() {
     wx.request({
-      url: 'http://localhost:8080/wx/info',
+      url: app.globalData.ip+'/wx/info',
       data: {
         id: app.globalData.id
       },

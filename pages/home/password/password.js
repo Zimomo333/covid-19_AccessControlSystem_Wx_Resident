@@ -64,8 +64,9 @@ Page({
       return false
     }
     wx.request({
-      url: 'http://localhost:8080/wx/resident/change-pwd',
+      url: app.globalData.ip+'/wx/resident/change-pwd',
       data: {
+        id: app.globalData.id,
         old_password: this.old_password,
         password: this.password,
         confirm_password: this.confirm_password

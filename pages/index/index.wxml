@@ -6,7 +6,7 @@
   </swiper-item>
 </swiper>
 <view class="text-center text-shadow text-purple text-bold" style="font-size:25px;margin-top:30px;">
-  智慧社区电子出入证
+  智慧社区检查端
 </view>
 <view class="index">
   <button class="cu-btn bg-olive lg" style="margin-top: 50px;" bindtap="goToRegister" wx:if="{{!registerSign}}">

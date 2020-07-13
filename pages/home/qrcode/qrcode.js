@@ -14,7 +14,7 @@ Page({
    */
   onLoad: function () {
     wx.request({
-      url: 'http://localhost:8080/wx/resident/qrcode', //获取图片的URL
+      url: app.globalData.ip+'/wx/resident/qrcode', //获取图片的URL
       method:"get",
       data: {
         id: app.globalData.id

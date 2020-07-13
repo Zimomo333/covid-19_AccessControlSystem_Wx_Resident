@@ -15,7 +15,7 @@ Page({
    */
   onLoad: function (options) {
     wx.request({
-      url: 'http://localhost:8080wx/resident/if-bind',
+      url: app.globalData.ip+'wx/resident/if-bind',
       data: {
         id: app.globalData.id
       },
@@ -26,7 +26,7 @@ Page({
   },
   bind(){
     wx.request({
-      url: 'http://localhost:8080/wx/resident/bind',
+      url: app.globalData.ip+'/wx/resident/bind',
       data: {
         id: app.globalData.id,
         openid: app.globalData.openid
@@ -49,7 +49,7 @@ Page({
   },
   cancelBind(){
     wx.request({
-      url: 'http://localhost:8080/wx/resident/cancel-bind',
+      url: app.globalData.ip+'/wx/resident/cancel-bind',
       data: {
         id: app.globalData.id
       },

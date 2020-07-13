@@ -1,5 +1,6 @@
 // pages/login.js
 import WxValidate from '../../utils/WxValidate.js'
+const app = getApp()
 
 Page({
   data: {
@@ -56,7 +57,7 @@ Page({
       url: '/pages/home/home'
     })
     wx.request({
-      url: 'http://localhost:8080/wx/resident/login',
+      url: app.globalData.ip+'/wx/resident/login',
       data: {
         username: this.username,
         password: this.password
