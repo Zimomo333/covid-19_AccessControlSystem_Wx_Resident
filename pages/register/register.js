@@ -111,13 +111,13 @@ Page({
     wx.request({
       url: app.globalData.ip+'/wx/resident/register',
       data: {
-        username: this.username,
-        password: this.password,
-        confirm_password: this.confirm_password,
-        sex: this.sex,
-        identity_card: this.identity_card,
-        house_no: this.house_no,
-        photo: this.photo,
+        username: params.username,
+        password: params.password,
+        confirm_password: params.confirm_password,
+        sex: params.sex,
+        identity_card: params.identity_card,
+        house_no: params.house_no,
+        photo: params.photo,
         openid: app.globalData.openid
       },
       success: res => {

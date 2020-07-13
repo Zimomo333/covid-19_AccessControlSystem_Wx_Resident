@@ -19,7 +19,7 @@ Page({
     var prevPage = pages[pages.length - 2];  //上一个页面
     this.setData({
       form: {
-        sex:prevPage.data.sex,
+        sex: prevPage.data.sex,
         identity_card: prevPage.data.identity_card,
         house_no: prevPage.data.house_no
       },
@@ -68,6 +68,7 @@ Page({
   formSubmit(e) {
     console.log('form发生了submit事件，携带数据为：', e.detail.value)
     const params = e.detail.value
+    console.log(this.form.sex)
     //校验表单
     if (!this.WxValidate.checkForm(params)) {
       const error = this.WxValidate.errorList[0]

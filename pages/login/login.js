@@ -59,8 +59,8 @@ Page({
     wx.request({
       url: app.globalData.ip+'/wx/resident/login',
       data: {
-        username: this.username,
-        password: this.password
+        username: params.username,
+        password: params.password
       },
       success: res => {
         var result = res.data.result
