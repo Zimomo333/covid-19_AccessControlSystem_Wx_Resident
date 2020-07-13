@@ -12,26 +12,27 @@ Page({
     health_status: '',
     access_times: '',
     is_locked: '',
+    sex_option: ['未知','男','女']
   },
 
   onLoad: function() {
     wx.request({
-      url: app.globalData.ip+'/wx/info',
+      url: app.globalData.ip+'/wx/resident/info',
       data: {
         id: app.globalData.id
       },
       success: res => {
         this.setData({
-          id: res.data.id,
-          username: res.data.username,
-          name: res.data.name,
-          sex: res.data.sex,
-          identity_card: res.data.identity_card,
-          photo: res.data.photo,
-          house_no:  res.data.house_no,
-          health_status: res.data.health_status,
-          access_times: res.data.access_times,
-          is_locked: res.data.is_locked
+          id: res.data.info.id,
+          username: res.data.info.username,
+          name: res.data.info.name,
+          sex: res.data.info.sex,
+          identity_card: res.data.info.identity_card,
+          photo: res.data.info.photo,
+          house_no:  res.data.info.house_no,
+          health_status: res.data.info.health_status,
+          access_times: res.data.info.access_times,
+          is_locked: res.data.info.is_locked
         })
       }
     })

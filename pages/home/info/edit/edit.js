@@ -79,15 +79,14 @@ Page({
       url: app.globalData.ip+'/wx/resident/edit',
       data: {
         id: app.globalData.id,
-        sex: this.form.sex,
-        identity_card: this.form.identity_card,
-        house_no: this.form.house_no,
-        photo: this.photo
+        sex: params.sex,
+        identity_card: params.identity_card,
+        house_no: params.house_no,
+        photo: params.photo
       },
       success: res => {
         var result = res.data.result
         if(result == 0){
-          app.globalData.id = res.data.id
           this.showModal({
             msg: '修改成功'
           })

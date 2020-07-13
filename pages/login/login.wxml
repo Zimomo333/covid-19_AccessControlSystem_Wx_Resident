@@ -6,11 +6,11 @@
   <form catchsubmit="formSubmit" catchreset="formReset">
     <view class="cu-form-group">
       <view class="title">用户名:</view>
-      <input name="username" placeholder="请输入用户名"></input>
+      <input name="username" placeholder="请输入用户名" style="width:170px;"></input>
     </view>
     <view class="cu-form-group">
       <view class="title">密码　:</view>
-      <input name="password" password type="text" placeholder="请输入密码"></input>
+      <input name="password" password type="text" placeholder="请输入密码" style="width:170px;"></input>
     </view>
     <view class="btn-area">
       <button style="margin-top: 20px;margin-bottom:10px;" type="primary" formType="submit">登录</button>

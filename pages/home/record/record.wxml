@@ -3,19 +3,12 @@
     出入记录
 </view>
 <view class="cu-bar bg-white solid-bottom margin-top">
-    <view class="action">
-      id　　　　　体温　　　日期　　　　　检查员
-    </view>
+  <view class="action">
+    记录id　　　　　体温　　　日期　　　　　检查员id
   </view>
-<view class="cu-list menu">
-  <view wx:for="{{list}}">
-    <view class="cu-item">
-      <view class="content">
-        <text class="text-grey">{{item.id}}　　　　</text>
-        <text class="text-grey">{{item.temperature}}　　</text>
-        <text class="text-grey">{{item.time}}　</text>
-        <text class="text-grey">{{item.inspectors_id}}</text>
-      </view>
-    </view>
+</view>
+<view class="cu-bar bg-white solid-bottom" wx:for="{{list}}">
+  <view class="action">
+    {{item.id}}　　　　　{{item.temperature}}　　　{{item.time}}　　{{item.inspectors_id}}
   </view>
 </view>

@@ -18,7 +18,7 @@
   </view>
   <view class="cu-form-group">
     <view class="title">性别</view>
-    {{sex}}
+    {{sex_option[sex]}}
   </view>
   <view class="cu-form-group">
     <view class="title">神号</view>

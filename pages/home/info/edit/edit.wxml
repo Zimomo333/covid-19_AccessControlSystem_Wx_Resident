@@ -9,18 +9,8 @@
   <view class="cu-form-group">
     <view class="title">性别</view>
     <radio-group name="sex" value="{{form.sex}}">
-      <view wx:if="{{form.sex == 1}}">
-      <label><radio value="1" checked/>　男　</label>
+      <label><radio value="1"/>　男　</label>
       <label><radio value="2"/>　女　</label>
-      </view>
-      <view wx:elif="{{form.sex == 2}}">
-      <label><radio value="1" />　男　</label>
-      <label><radio value="2" checked/>　女　</label>
-      </view>
-      <view wx:else>
-      <label><radio value="1" />　男　</label>
-      <label><radio value="2" />　女　</label>
-      </view>
     </radio-group>
   </view>
   <view class="cu-form-group">

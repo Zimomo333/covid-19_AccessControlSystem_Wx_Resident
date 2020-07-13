@@ -112,6 +112,7 @@ Page({
       url: app.globalData.ip+'/wx/resident/register',
       data: {
         username: params.username,
+        name: params.name,
         password: params.password,
         confirm_password: params.confirm_password,
         sex: params.sex,
