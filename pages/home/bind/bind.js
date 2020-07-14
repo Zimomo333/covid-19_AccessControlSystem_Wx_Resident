@@ -7,20 +7,23 @@ Page({
    * 页面的初始数据
    */
   data: {
-    is_bind: null
+    is_bind: true
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function () {
     wx.request({
-      url: app.globalData.ip+'wx/resident/if-bind',
+      url: app.globalData.ip+'/wx/resident/if-bind',
       data: {
         id: app.globalData.id
       },
       success: res => {
-        this.is_bind = res.data.is_bind
+        console.log(res)
+        this.setData({
+          is_bind: res.data.is_bind
+        })
       }
     })
   },
@@ -32,7 +35,7 @@ Page({
         openid: app.globalData.openid
       },
       success: res => {
-        if(res.result==1){
+        if(res.result==0){
           wx.showModal({
             content: "绑定成功",
             showCancel: false,
@@ -54,7 +57,7 @@ Page({
         id: app.globalData.id
       },
       success: res => {
-        if(res.result==1){
+        if(res.result==0){
           wx.showModal({
             content: "解绑成功",
             showCancel: false,
