@@ -19,7 +19,7 @@ App({
             },
             success: res => {
               this.globalData.openid = res.data.openid,
-              this.globalData.bindSign = res.data.bindSign
+              this.globalData.registerSign = res.data.registerSign
               // 由于 getOpenid 是网络请求，可能会在 Page.onLoad 之后才返回
               // 所以此处加入 callback 以防止这种情况
               if (this.openidReadyCallback) {
