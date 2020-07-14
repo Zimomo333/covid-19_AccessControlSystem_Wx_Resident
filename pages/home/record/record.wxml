@@ -9,6 +9,6 @@
 </view>
 <view class="cu-bar bg-white solid-bottom" wx:for="{{list}}">
   <view class="action">
-    {{item.id}}　　　　　{{item.temperature}}　　　{{item.time}}　　{{item.inspectors_id}}
+    {{item.id}}　　　　　　　{{item.temperature}}　　　{{item.time}}　　{{item.inspectors_id}}
   </view>
 </view>
