@@ -1,5 +1,6 @@
 // pages/home/record/record.js
 const app = getApp()
+let time = require('../../../utils/util');
 
 Page({
 
@@ -20,6 +21,9 @@ Page({
         id: app.globalData.id
       },
       success: res => {
+        res.data.list.forEach(element => {
+          element.time = time.formatTimeTwo(element.time,'Y-M-D h:m:s')
+        });
         this.setData({
           list: res.data.list
         })
