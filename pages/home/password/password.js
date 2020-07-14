@@ -85,15 +85,10 @@ Page({
           return false
         } else if (result == 2) {
           this.showModal({
-            msg: '与旧密码重复'
-          })
-          return false
-        } else if (result == 3) {
-          this.showModal({
             msg: '旧密码不正确'
           })
           return false
-        } else if (result == 4) {
+        } else if (result == 3) {
           this.showModal({
             msg: '读写错误'
           })
