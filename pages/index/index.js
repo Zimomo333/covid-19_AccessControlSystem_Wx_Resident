@@ -61,7 +61,7 @@ Page({
     wx.request({
       url: app.globalData.ip+'/wx/resident/wx-login',
       data: {
-        openid: this.openid
+        openid: app.globalData.openid
       },
       success: res => {
         app.globalData.id = res.data.id

@@ -20,7 +20,6 @@ Page({
         id: app.globalData.id
       },
       success: res => {
-        console.log(res)
         this.setData({
           is_bind: res.data.is_bind
         })
@@ -35,7 +34,7 @@ Page({
         openid: app.globalData.openid
       },
       success: res => {
-        if(res.result==0){
+        if(res.data.result==0){
           wx.showModal({
             content: "绑定成功",
             showCancel: false,
@@ -57,7 +56,7 @@ Page({
         id: app.globalData.id
       },
       success: res => {
-        if(res.result==0){
+        if(res.data.result==0){
           wx.showModal({
             content: "解绑成功",
             showCancel: false,
