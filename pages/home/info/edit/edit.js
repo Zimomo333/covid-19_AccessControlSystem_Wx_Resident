@@ -86,11 +86,11 @@ Page({
       success: res => {
         var result = res.data.result
         if(result == 0){
-          this.showModal({
-            msg: '修改成功'
-          })
           wx.navigateTo({
             url: '/pages/home/info/info'
+          })
+          this.showModal({
+            msg: '修改成功'
           })
         } else if (result == 1) {
           this.showModal({
