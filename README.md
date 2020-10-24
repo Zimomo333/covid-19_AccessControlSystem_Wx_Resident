@@ -2,7 +2,7 @@
 
 ### 组件库
 
-1. ColorUI 小程序组件库
+1. ColorUI 小程序UI库
 
    https://www.color-ui.com/
 
