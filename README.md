@@ -12,8 +12,8 @@
 
 ### Demo展示
 
-<img src="https://raw.githubusercontent.com/Zimomo333/covid-19_AccessControlSystem_Wx_Resident/master/picture/login.png" style="zoom: 67%;" />
+<img src="https://raw.githubusercontent.com/Zimomo333/covid-19_AccessControlSystem_Wx_Resident/master/picture/login.png" width="300px" height="534px" />
 
 
 
-<img src="https://raw.githubusercontent.com/Zimomo333/covid-19_AccessControlSystem_Wx_Resident/master/picture/index.png" style="zoom:67%;" />
+<img src="https://raw.githubusercontent.com/Zimomo333/covid-19_AccessControlSystem_Wx_Resident/master/picture/index.png" width="300px" height="530px" />
